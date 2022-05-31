@@ -19,6 +19,17 @@ interface Props {
     pokemon: Pokemon
   }
 
+  let pantalla: number
+
+   if (typeof window === 'undefined'){
+     null
+   } else {
+     pantalla = window.screen.width
+     console.log(pantalla);
+     
+   }
+   
+
 const PokemonByNamePage:NextPage<Props> = ({ pokemon }) => {
     
   const [isInFavorites, setIsInFavorites] = useState( localFavorites.existInFavorites( pokemon.id ))
@@ -43,7 +54,11 @@ const PokemonByNamePage:NextPage<Props> = ({ pokemon }) => {
     
   }
 
+
+   
+
   return  (
+
     <>
         <Layout title={ pokemon.name }>
           <Grid.Container css={{ marginTop: '5x' }} gap={ 2 }>
@@ -63,7 +78,11 @@ const PokemonByNamePage:NextPage<Props> = ({ pokemon }) => {
 
             <Grid xs={ 12 } sm={ 8 }>
               <Card>
-                <Card.Header css={(outerWidth < 450) ?{ display: 'grid', justifyContent: 'space-between'}:{ display: 'flex', justifyContent: 'space-between'} }>
+                <Card.Header css={
+                  
+                     ( pantalla < 450) ?{ display: 'grid', justifyContent: 'space-between'}:{ display: 'flex', justifyContent: 'space-between'} 
+                  
+                  }>
                   <Text h1 transform="capitalize" >
                     { pokemon.name }
                   </Text>
