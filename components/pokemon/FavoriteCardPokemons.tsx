@@ -10,11 +10,11 @@ interface Props {
 
 export const FavoriteCardPokemons:FC<Props> = ({ pokemonId }) => {
 
-
+ const name = localStorage.getItem(`${pokemonId}`)
   const router = useRouter()
 
   const onFavoriteClicked = ()=> {
-      router.push(`/pokemon/${ pokemonId }`)
+    router.push(`/name/${ name }`)
   }
 
   return (
