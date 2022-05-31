@@ -5,7 +5,6 @@ import { Button, Card, Container, Grid, Image, Text } from "@nextui-org/react";
 
 import confetti from 'canvas-confetti'
 
-import { pokeApi } from "../../api";
 import { Layout } from "../../components/layouts"
 import { Pokemon} from "../../interfaces";
 import { getPokemonInfo, localFavorites } from "../../utils";
@@ -57,8 +56,8 @@ const PokemonPage:NextPage<Props> = ({pokemon}) => {
   return (
     <>
         <Layout title={ pokemon.name }>
-          <Grid.Container css={{ marginTop: '5px' }} gap={ 2 }>
-            <Grid xs={ 4 } sm={ 4 }>
+          <Grid.Container css={{ marginTop: '5x' }} gap={ 2 }>
+            <Grid xs={ 12 } sm={ 4 }>
               <Card hoverable css={{ padding: '30px'}}>
                 <Card.Body>
                  <Card.Image
@@ -72,7 +71,7 @@ const PokemonPage:NextPage<Props> = ({pokemon}) => {
               </Card>
             </Grid>
 
-            <Grid xs={ 8 } sm={ 8 }>
+            <Grid xs={ 12 } sm={ 8 }>
               <Card>
               <Card.Header css={
                   
