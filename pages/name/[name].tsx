@@ -46,8 +46,8 @@ const PokemonByNamePage:NextPage<Props> = ({ pokemon }) => {
   return  (
     <>
         <Layout title={ pokemon.name }>
-          <Grid.Container css={{ marginTop: '5px' }} gap={ 2 }>
-            <Grid xs={ 4 } sm={ 4 }>
+          <Grid.Container css={{ marginTop: '5x' }} gap={ 2 }>
+            <Grid xs={ 12 } sm={ 4 }>
               <Card hoverable css={{ padding: '30px'}}>
                 <Card.Body>
                  <Card.Image
@@ -61,9 +61,9 @@ const PokemonByNamePage:NextPage<Props> = ({ pokemon }) => {
               </Card>
             </Grid>
 
-            <Grid xs={ 8 } sm={ 8 }>
+            <Grid xs={ 12 } sm={ 8 }>
               <Card>
-                <Card.Header css={{ display: 'flex', justifyContent: ' space-between'}}>
+                <Card.Header css={(outerWidth < 450) ?{ display: 'grid', justifyContent: 'space-between'}:{ display: 'flex', justifyContent: 'space-between'} }>
                   <Text h1 transform="capitalize" >
                     { pokemon.name }
                   </Text>
