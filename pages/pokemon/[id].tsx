@@ -11,6 +11,16 @@ import { Pokemon} from "../../interfaces";
 import { getPokemonInfo, localFavorites } from "../../utils";
 
 
+let pantalla: number
+
+   if (typeof window === 'undefined'){
+     null
+   } else {
+     pantalla = window.screen.width
+     console.log(pantalla);
+     
+   }
+
  interface Props {
     pokemon: Pokemon
   }
@@ -64,7 +74,11 @@ const PokemonPage:NextPage<Props> = ({pokemon}) => {
 
             <Grid xs={ 8 } sm={ 8 }>
               <Card>
-                <Card.Header css={{ display: 'flex', justifyContent: ' space-between'}}>
+              <Card.Header css={
+                  
+                  ( pantalla < 450) ?{ display: 'grid', justifyContent: 'space-between'}:{ display: 'flex', justifyContent: 'space-between'} 
+               
+               }>
                   <Text h1 transform="capitalize" >
                     { pokemon.name }
                   </Text>

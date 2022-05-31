@@ -14,12 +14,7 @@ import { getPokemonInfo } from '../../utils';
 
 
 
-
-interface Props {
-    pokemon: Pokemon
-  }
-
-  let pantalla: number
+ let pantalla: number
 
    if (typeof window === 'undefined'){
      null
@@ -28,6 +23,12 @@ interface Props {
      console.log(pantalla);
      
    }
+
+
+interface Props {
+    pokemon: Pokemon
+  }
+ 
    
 
 const PokemonByNamePage:NextPage<Props> = ({ pokemon }) => {
